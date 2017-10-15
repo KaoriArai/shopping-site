@@ -1,0 +1,178 @@
+html {
+  font-size: 62.5%; }
+
+p {
+  font-size: 16px;
+  font-size: 1.6rem; }
+
+a {
+  text-decoration: none; }
+
+body {
+  background-color: #f9f8f6; }
+
+/* HEADER 
+---------------------------------------------*/
+header #header_in {
+  padding-top: 20px;
+  padding-bottom: 4px;
+  margin-bottom: 10px; }
+header img {
+  margin: 0;
+  padding-top: 4px; }
+header .pc_navi {
+  margin-top: 10px; }
+  header .pc_navi ul {
+    margin-bottom: 0;
+    text-align: right; }
+    header .pc_navi ul li {
+      margin-right: 10px;
+      display: inline-block;
+      list-style-type: none; }
+      header .pc_navi ul li:last-child {
+        margin-right: 0; }
+
+/* PAGE CONTENTS 
+---------------------------------------------*/
+#page_contents {
+  /* MAIN CONTENTS */
+  /* SIDEBER CONTENTS */ }
+  #page_contents #cover_area {
+    margin-top: 10px;
+    margin-bottom: 10px; }
+    #page_contents #cover_area .owl-dots {
+      text-align: left; }
+      #page_contents #cover_area .owl-dots .owl-dot span {
+        height: 2px;
+        width: 30px; }
+      #page_contents #cover_area .owl-dots .owl-dot.active span {
+        background-color: #9d1a2d; }
+  #page_contents #new_items {
+    padding-top: 20px;
+    padding-bottom: 10px; }
+  #page_contents #popular_items {
+    padding-top: 20px;
+    padding-bottom: 10px; }
+  #page_contents .items_list {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; }
+    #page_contents .items_list .item_box {
+      box-sizing: border-box;
+      background-color: #ffffff;
+      width: calc(( 100% - 4px ) /3);
+      padding: 10px;
+      margin-top: 2px;
+      text-align: center; }
+      #page_contents .items_list .item_box .description, #page_contents .items_list .item_box .cost {
+        text-align: left; }
+  #page_contents #shopping_guide {
+    padding-top: 20px;
+    padding-bottom: 10px; }
+    #page_contents #shopping_guide .guide_container {
+      margin-top: 20px;
+      display: flex;
+      justify-content: space-between; }
+      #page_contents #shopping_guide .guide_container .guide_box {
+        background-color: #ffffff;
+        width: calc(( 100% - 2px ) /2);
+        padding: 14px 0 0 14px;
+        box-sizing: border-box; }
+        #page_contents #shopping_guide .guide_container .guide_box img {
+          margin: 5px; }
+        #page_contents #shopping_guide .guide_container .guide_box .title {
+          font-size: 18px;
+          font-size: 1.8rem;
+          font-weight: bold;
+          color: #887f69;
+          margin-bottom: 10px; }
+        #page_contents #shopping_guide .guide_container .guide_box .sub_title {
+          font-size: 16px;
+          font-size: 1.6rem;
+          font-weight: bold;
+          color: #887f69;
+          margin-top: 4px;
+          margin-bottom: 2px; }
+  #page_contents #sidebar #item_search {
+    background-color: #ffffff;
+    width: 100%;
+    text-align: center; }
+    #page_contents #sidebar #item_search img {
+      text-align: left; }
+    #page_contents #sidebar #item_search #searchFrm {
+      display: block;
+      position: relative;
+      padding: 0 10px; }
+    #page_contents #sidebar #item_search #keywords {
+      position: relative;
+      background-color: #e2ddd4;
+      border: none;
+      width: 100%; }
+    #page_contents #sidebar #item_search #searchBtn {
+      position: absolute;
+      top: 10px;
+      right: 20px; }
+  #page_contents #sidebar #side_navi .side_navi_box {
+    margin-top: 10px;
+    margin-bottom: 10px; }
+    #page_contents #sidebar #side_navi .side_navi_box .side_navi_title {
+      background-color: #887f69;
+      padding: 10px 0 10px 10px; }
+      #page_contents #sidebar #side_navi .side_navi_box .side_navi_title:after {
+        content: url("../images/top/next_icon.png"); }
+    #page_contents #sidebar #side_navi .side_navi_box .side_navi_contens li {
+      list-style-type: none;
+      padding: 10px 0 10px 0;
+      margin-top: 0;
+      margin-bottom: 2px;
+      background-color: #ffffff;
+      text-indent: 10px;
+      font-size: 14px;
+      font-size: 1.4rem; }
+      #page_contents #sidebar #side_navi .side_navi_box .side_navi_contens li:after {
+        content: url("../images/top/next_icon_gray.png");
+        float: right;
+        margin-right: 10px; }
+  #page_contents #sidebar #shop_info .shop_info_box {
+    margin-top: 10px;
+    margin-bottom: 10px; }
+    #page_contents #sidebar #shop_info .shop_info_box .shop_info_title {
+      background-color: #887f69;
+      padding: 10px 0 10px 10px; }
+    #page_contents #sidebar #shop_info .shop_info_box .shop_info_contens {
+      background-color: #ffffff;
+      padding: 10px;
+      display: inline-block;
+      text-align: center; }
+      #page_contents #sidebar #shop_info .shop_info_box .shop_info_contens p {
+        font-size: 14px;
+        font-size: 1.4rem;
+        text-align: left; }
+
+/* FOOTER
+---------------------------------------------*/
+#footer_in {
+  margin-top: 20px; }
+  #footer_in .pagetop {
+    border-bottom: 1px solid #887f69;
+    text-align: right; }
+  #footer_in .footer_link {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px; }
+    #footer_in .footer_link ul {
+      padding-left: 10px; }
+      #footer_in .footer_link ul li {
+        display: inline-block;
+        margin-right: 10px; }
+      #footer_in .footer_link ul a {
+        color: black;
+        margin-right: 5px; }
+  #footer_in p {
+    text-align: center;
+    color: #b0b0b0;
+    font-size: 10px;
+    font-size: 1rem; }
+
+/*# sourceMappingURL=shopping.css.map */

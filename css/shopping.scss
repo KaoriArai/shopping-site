@@ -1,0 +1,275 @@
+@charset "utf-8";
+@import "compass";
+
+$ja_font : "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", メイリオ, Verdana, "ＭＳ Ｐゴシック", sans-serif;
+$basecolor: #f9f8f6;
+$gray1: #887f69;
+$gray2: #e2ddd4;
+$gray3: #b0b0b0;
+$red: #9d1a2d;
+$bgwhite: #ffffff;
+
+
+@mixin fontsize($size: 24, $base: 10) {
+    font-size: $size + px;
+    font-size: ($size / $base) * 1rem;
+}
+
+// @function calcWidth($spacePx, $columnNum) {
+//     @return (100% - ($spacePx * ($columnNum - 1))) / $columnNum;
+// }
+// さいのさん作↓
+// @function calcWidth($spacePx, $columnNum) {
+//     $spacePx:($columnNum - 1) * $spacePx;
+//     @return calc((100% - #{$spacePx}px) / #{$columnNum});
+// }
+
+html {
+    font-size: 62.5%;
+}
+
+p {
+    @include fontsize(16);
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    background-color: $basecolor;
+}
+
+/* HEADER 
+---------------------------------------------*/
+header {
+    #header_in{
+        padding-top: 20px;
+        padding-bottom: 4px;
+        margin-bottom: 10px;
+    }
+    img {
+        margin: 0;
+        padding-top: 4px;
+    }
+    .pc_navi {
+        margin-top: 10px;
+        ul {
+            margin-bottom: 0;
+            text-align: right;
+            li {
+                margin-right: 10px;
+                display: inline-block;
+                list-style-type: none;
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+}
+// header
+
+/* PAGE CONTENTS 
+---------------------------------------------*/
+#page_contents {
+
+/* MAIN CONTENTS */
+    #cover_area {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        .owl-dots {
+            text-align: left;
+            .owl-dot {
+                span {
+                    height: 2px;
+                    width: 30px;
+                }
+                &.active span {
+                    background-color:$red;
+                }
+            }
+        }
+    }
+    
+    #new_items{
+        padding-top: 20px;
+        padding-bottom: 10px;
+    }
+
+    #popular_items {
+        padding-top: 20px;
+        padding-bottom: 10px;
+    }
+
+    .items_list {
+        margin-top: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        .item_box {
+            box-sizing: border-box;
+            background-color: $bgwhite;
+            width: calc(( 100% - 4px ) /3);
+            padding: 10px;
+            margin-top: 2px;
+            text-align: center;
+            .description,.cost {
+                text-align: left;
+            }
+        }
+    }
+    
+    #shopping_guide {
+        padding-top: 20px;
+        padding-bottom: 10px;
+        
+        .guide_container {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+
+            .guide_box {
+                background-color: $bgwhite;
+                width: calc(( 100% - 2px ) /2);
+                padding: 14px 0 0 14px;
+                box-sizing: border-box;
+                
+                img {
+                    margin: 5px;
+                }
+                .title {
+                    @include fontsize(18);
+                    font-weight: bold;
+                    color: $gray1;
+                    margin-bottom: 10px;
+                }
+                .sub_title {
+                    @include fontsize(16);
+                    font-weight: bold;
+                    color: $gray1;
+                    margin-top: 4px;
+                    margin-bottom: 2px;
+                }
+            }
+        }
+    }
+    
+
+
+/* SIDEBER CONTENTS */
+    #sidebar {
+        #item_search {
+            background-color: $bgwhite;
+            width: 100%;
+            text-align: center;
+
+            img {
+                text-align: left;       
+            }
+            #searchFrm {
+                display: block;
+                position: relative;
+                padding: 0 10px;
+            }
+            #keywords {
+                position: relative;
+                background-color: $gray2;
+                border: none;
+                width: 100%;
+            }
+            #searchBtn {
+                position: absolute;
+                top: 10px;
+                right: 20px;
+            }
+        }
+
+        #side_navi {
+            .side_navi_box {
+                margin-top: 10px;
+                margin-bottom: 10px;
+                
+                .side_navi_title {
+                    background-color: $gray1;
+                    padding: 10px 0 10px 10px;
+                    &:after {
+                        content:url("../images/top/next_icon.png");
+                    }
+                }
+                .side_navi_contens {
+                    li{
+                        list-style-type: none;
+                        padding: 10px 0 10px 0;
+                        margin-top: 0;
+                        margin-bottom: 2px;
+                        background-color: $bgwhite;
+                        text-indent: 10px;
+                        @include fontsize(14);
+                        
+                        &:after {
+                            content:url("../images/top/next_icon_gray.png");
+                            float: right;
+                            margin-right: 10px;
+                        }
+                    }
+                }
+            }
+        }
+
+        #shop_info {
+            .shop_info_box {
+                margin-top: 10px;
+                margin-bottom: 10px;
+                
+                .shop_info_title {
+                    background-color: $gray1;
+                    padding: 10px 0 10px 10px;
+                }
+                .shop_info_contens {
+                    background-color: $bgwhite;
+                    padding: 10px;
+                    display: inline-block;
+                    text-align: center;
+                    p {
+                        @include fontsize(14);
+                        text-align: left;
+                    }
+                }
+            }
+        }
+    }
+}
+/* FOOTER
+---------------------------------------------*/
+#footer_in {
+    margin-top: 20px;
+    
+    .pagetop {
+        border-bottom: 1px solid $gray1;
+        text-align: right;
+    }
+    .footer_link {
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        ul{
+            padding-left: 10px;
+            li {
+                display: inline-block;
+                margin-right: 10px;
+            }
+            a {
+                color: black;
+                margin-right: 5px;
+            }
+        }
+    }
+    p {
+        text-align: center;
+        color: $gray3;
+        @include fontsize(10);
+    }
+
+}
