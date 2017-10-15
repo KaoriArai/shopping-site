@@ -24,6 +24,38 @@ $bgwhite: #ffffff;
 //     @return calc((100% - #{$spacePx}px) / #{$columnNum});
 // }
 
+@mixin sidebrTitle {
+    background-color: $gray1;
+    padding: 10px 0 10px 10px;
+    &:after {
+        content:url("../images/top/next_icon.png");
+        float: right;
+        margin-right: 10px;
+        background-repeat: no-repeat;
+    }
+    &.oplenlink:after {
+        content:url("../images/top/down_icon.png");
+    }
+}
+
+@mixin sideberContents {
+    li{
+        list-style-type: none;
+        padding: 10px 0 10px 0;
+        margin-top: 0;
+        margin-bottom: 2px;
+        background-color: $bgwhite;
+        text-indent: 10px;
+        @include fontsize(14);
+    
+        &:after {
+            content:url("../images/top/next_icon_gray.png");
+            float: right;
+            margin-right: 10px;
+        }
+    }
+}
+
 html {
     font-size: 62.5%;
 }
@@ -156,17 +188,16 @@ header {
         }
     }
     
-
-
 /* SIDEBER CONTENTS */
     #sidebar {
         #item_search {
             background-color: $bgwhite;
             width: 100%;
             text-align: center;
-
+            padding-top: 10px;
+            
             img {
-                text-align: left;       
+                
             }
             #searchFrm {
                 display: block;
@@ -178,6 +209,10 @@ header {
                 background-color: $gray2;
                 border: none;
                 width: 100%;
+                ::-webkit-input-placeholder {
+                    color: lighten($gray3, 10%);
+                    font-style: italic;
+                }
             }
             #searchBtn {
                 position: absolute;
@@ -187,33 +222,30 @@ header {
         }
 
         #side_navi {
-            .side_navi_box {
+            .side_link_box {
                 margin-top: 10px;
                 margin-bottom: 10px;
+                width: 100%;
                 
-                .side_navi_title {
-                    background-color: $gray1;
-                    padding: 10px 0 10px 10px;
-                    &:after {
-                        content:url("../images/top/next_icon.png");
-                    }
+                .side_link_title {
+                    @include sidebrTitle;
                 }
-                .side_navi_contens {
-                    li{
-                        list-style-type: none;
-                        padding: 10px 0 10px 0;
-                        margin-top: 0;
-                        margin-bottom: 2px;
-                        background-color: $bgwhite;
-                        text-indent: 10px;
-                        @include fontsize(14);
-                        
-                        &:after {
-                            content:url("../images/top/next_icon_gray.png");
-                            float: right;
-                            margin-right: 10px;
-                        }
-                    }
+                .side_link_contens {
+                    display: none;
+                    @include sideberContents;
+                }
+            }
+            .side_cate_box {
+                margin-top: 10px;
+                margin-bottom: 10px;
+                width: 100%;
+                
+                .side_cate_title {
+                    @include sidebrTitle;
+                }
+                .side_cate_contens {
+                    display: none;
+                    @include sideberContents;
                 }
             }
         }
@@ -229,9 +261,8 @@ header {
                 }
                 .shop_info_contens {
                     background-color: $bgwhite;
-                    padding: 10px;
-                    display: inline-block;
                     text-align: center;
+                    padding-top: 10px;
                     p {
                         @include fontsize(14);
                         text-align: left;
@@ -253,9 +284,10 @@ header {
     .footer_link {
         text-align: center;
         margin-top: 20px;
-        margin-bottom: 20px;
+        margin-bottom: 10px;
         ul{
             padding-left: 10px;
+            margin-bottom: 10px;
             li {
                 display: inline-block;
                 margin-right: 10px;

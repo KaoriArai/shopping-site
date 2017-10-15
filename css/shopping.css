@@ -97,9 +97,8 @@ header .pc_navi {
   #page_contents #sidebar #item_search {
     background-color: #ffffff;
     width: 100%;
-    text-align: center; }
-    #page_contents #sidebar #item_search img {
-      text-align: left; }
+    text-align: center;
+    padding-top: 10px; }
     #page_contents #sidebar #item_search #searchFrm {
       display: block;
       position: relative;
@@ -109,31 +108,71 @@ header .pc_navi {
       background-color: #e2ddd4;
       border: none;
       width: 100%; }
+      #page_contents #sidebar #item_search #keywords ::-webkit-input-placeholder {
+        color: #cacaca;
+        font-style: italic; }
     #page_contents #sidebar #item_search #searchBtn {
       position: absolute;
       top: 10px;
       right: 20px; }
-  #page_contents #sidebar #side_navi .side_navi_box {
+  #page_contents #sidebar #side_navi .side_link_box {
     margin-top: 10px;
-    margin-bottom: 10px; }
-    #page_contents #sidebar #side_navi .side_navi_box .side_navi_title {
+    margin-bottom: 10px;
+    width: 100%; }
+    #page_contents #sidebar #side_navi .side_link_box .side_link_title {
       background-color: #887f69;
       padding: 10px 0 10px 10px; }
-      #page_contents #sidebar #side_navi .side_navi_box .side_navi_title:after {
-        content: url("../images/top/next_icon.png"); }
-    #page_contents #sidebar #side_navi .side_navi_box .side_navi_contens li {
-      list-style-type: none;
-      padding: 10px 0 10px 0;
-      margin-top: 0;
-      margin-bottom: 2px;
-      background-color: #ffffff;
-      text-indent: 10px;
-      font-size: 14px;
-      font-size: 1.4rem; }
-      #page_contents #sidebar #side_navi .side_navi_box .side_navi_contens li:after {
-        content: url("../images/top/next_icon_gray.png");
+      #page_contents #sidebar #side_navi .side_link_box .side_link_title:after {
+        content: url("../images/top/next_icon.png");
         float: right;
-        margin-right: 10px; }
+        margin-right: 10px;
+        background-repeat: no-repeat; }
+      #page_contents #sidebar #side_navi .side_link_box .side_link_title.oplenlink:after {
+        content: url("../images/top/down_icon.png"); }
+    #page_contents #sidebar #side_navi .side_link_box .side_link_contens {
+      display: none; }
+      #page_contents #sidebar #side_navi .side_link_box .side_link_contens li {
+        list-style-type: none;
+        padding: 10px 0 10px 0;
+        margin-top: 0;
+        margin-bottom: 2px;
+        background-color: #ffffff;
+        text-indent: 10px;
+        font-size: 14px;
+        font-size: 1.4rem; }
+        #page_contents #sidebar #side_navi .side_link_box .side_link_contens li:after {
+          content: url("../images/top/next_icon_gray.png");
+          float: right;
+          margin-right: 10px; }
+  #page_contents #sidebar #side_navi .side_cate_box {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%; }
+    #page_contents #sidebar #side_navi .side_cate_box .side_cate_title {
+      background-color: #887f69;
+      padding: 10px 0 10px 10px; }
+      #page_contents #sidebar #side_navi .side_cate_box .side_cate_title:after {
+        content: url("../images/top/next_icon.png");
+        float: right;
+        margin-right: 10px;
+        background-repeat: no-repeat; }
+      #page_contents #sidebar #side_navi .side_cate_box .side_cate_title.oplenlink:after {
+        content: url("../images/top/down_icon.png"); }
+    #page_contents #sidebar #side_navi .side_cate_box .side_cate_contens {
+      display: none; }
+      #page_contents #sidebar #side_navi .side_cate_box .side_cate_contens li {
+        list-style-type: none;
+        padding: 10px 0 10px 0;
+        margin-top: 0;
+        margin-bottom: 2px;
+        background-color: #ffffff;
+        text-indent: 10px;
+        font-size: 14px;
+        font-size: 1.4rem; }
+        #page_contents #sidebar #side_navi .side_cate_box .side_cate_contens li:after {
+          content: url("../images/top/next_icon_gray.png");
+          float: right;
+          margin-right: 10px; }
   #page_contents #sidebar #shop_info .shop_info_box {
     margin-top: 10px;
     margin-bottom: 10px; }
@@ -142,9 +181,8 @@ header .pc_navi {
       padding: 10px 0 10px 10px; }
     #page_contents #sidebar #shop_info .shop_info_box .shop_info_contens {
       background-color: #ffffff;
-      padding: 10px;
-      display: inline-block;
-      text-align: center; }
+      text-align: center;
+      padding-top: 10px; }
       #page_contents #sidebar #shop_info .shop_info_box .shop_info_contens p {
         font-size: 14px;
         font-size: 1.4rem;
@@ -160,9 +198,10 @@ header .pc_navi {
   #footer_in .footer_link {
     text-align: center;
     margin-top: 20px;
-    margin-bottom: 20px; }
+    margin-bottom: 10px; }
     #footer_in .footer_link ul {
-      padding-left: 10px; }
+      padding-left: 10px;
+      margin-bottom: 10px; }
       #footer_in .footer_link ul li {
         display: inline-block;
         margin-right: 10px; }
