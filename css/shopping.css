@@ -61,7 +61,7 @@ header .pc_navi {
     #page_contents .items_list .item_box {
       box-sizing: border-box;
       background-color: #ffffff;
-      width: calc(( 100% - 4px ) /3);
+      width: calc((100% - 4px) / 3);
       padding: 10px;
       margin-top: 2px;
       text-align: center; }
@@ -76,16 +76,15 @@ header .pc_navi {
       justify-content: space-between; }
       #page_contents #shopping_guide .guide_container .guide_box {
         background-color: #ffffff;
-        width: calc(( 100% - 2px ) /2);
-        padding: 14px 0 0 14px;
+        width: calc((100% - 2px) / 2);
+        padding: 10px;
         box-sizing: border-box; }
-        #page_contents #shopping_guide .guide_container .guide_box img {
-          margin: 5px; }
         #page_contents #shopping_guide .guide_container .guide_box .title {
           font-size: 18px;
           font-size: 1.8rem;
           font-weight: bold;
           color: #887f69;
+          margin-top: 10px;
           margin-bottom: 10px; }
         #page_contents #shopping_guide .guide_container .guide_box .sub_title {
           font-size: 16px;
@@ -97,8 +96,9 @@ header .pc_navi {
   #page_contents #sidebar #item_search {
     background-color: #ffffff;
     width: 100%;
-    text-align: center;
     padding-top: 10px; }
+    #page_contents #sidebar #item_search img {
+      margin-left: 10px; }
     #page_contents #sidebar #item_search #searchFrm {
       display: block;
       position: relative;
@@ -108,7 +108,10 @@ header .pc_navi {
       background-color: #e2ddd4;
       border: none;
       width: 100%; }
-      #page_contents #sidebar #item_search #keywords ::-webkit-input-placeholder {
+      #page_contents #sidebar #item_search #keywords::-webkit-input-placeholder {
+        color: #cacaca;
+        font-style: italic; }
+      #page_contents #sidebar #item_search #keywords::-webkit-input-placeholder {
         color: #cacaca;
         font-style: italic; }
     #page_contents #sidebar #item_search #searchBtn {
@@ -127,7 +130,7 @@ header .pc_navi {
         float: right;
         margin-right: 10px;
         background-repeat: no-repeat; }
-      #page_contents #sidebar #side_navi .side_link_box .side_link_title.oplenlink:after {
+      #page_contents #sidebar #side_navi .side_link_box .side_link_title.openlink:after {
         content: url("../images/top/down_icon.png"); }
     #page_contents #sidebar #side_navi .side_link_box .side_link_contens {
       display: none; }
@@ -156,7 +159,7 @@ header .pc_navi {
         float: right;
         margin-right: 10px;
         background-repeat: no-repeat; }
-      #page_contents #sidebar #side_navi .side_cate_box .side_cate_title.oplenlink:after {
+      #page_contents #sidebar #side_navi .side_cate_box .side_cate_title.openlink:after {
         content: url("../images/top/down_icon.png"); }
     #page_contents #sidebar #side_navi .side_cate_box .side_cate_contens {
       display: none; }
@@ -174,19 +177,20 @@ header .pc_navi {
           float: right;
           margin-right: 10px; }
   #page_contents #sidebar #shop_info .shop_info_box {
-    margin-top: 10px;
+    background-color: #ffffff;
+    width: 100%;
     margin-bottom: 10px; }
     #page_contents #sidebar #shop_info .shop_info_box .shop_info_title {
       background-color: #887f69;
-      padding: 10px 0 10px 10px; }
+      padding: 10px; }
     #page_contents #sidebar #shop_info .shop_info_box .shop_info_contens {
-      background-color: #ffffff;
-      text-align: center;
-      padding-top: 10px; }
+      padding: 10px;
+      text-align: center; }
       #page_contents #sidebar #shop_info .shop_info_box .shop_info_contens p {
+        margin-bottom: 10px;
+        text-align: left;
         font-size: 14px;
-        font-size: 1.4rem;
-        text-align: left; }
+        font-size: 1.4rem; }
 
 /* FOOTER
 ---------------------------------------------*/
