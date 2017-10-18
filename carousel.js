@@ -18,4 +18,8 @@ $(document).ready(function(){
         $('.side_cate_contens').slideToggle();
     });
 
+    $('#menu_icon').click(function(){
+        $('.hidden_navi').slideToggle();
+    });    
+
 });

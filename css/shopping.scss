@@ -9,7 +9,6 @@ $gray3: #b0b0b0;
 $red: #9d1a2d;
 $bgwhite: #ffffff;
 
-
 @mixin fontsize($size: 24, $base: 10) {
     font-size: $size + px;
     font-size: ($size / $base) * 1rem;
@@ -23,6 +22,7 @@ $bgwhite: #ffffff;
 @mixin sidebrTitle {
     background-color: $gray1;
     padding: 10px 0 10px 10px;
+
     &:after {
         content:url("../images/top/next_icon.png");
         float: right;
@@ -43,7 +43,7 @@ $bgwhite: #ffffff;
         background-color: $bgwhite;
         text-indent: 10px;
         @include fontsize(14);
-    
+        
         &:after {
             content:url("../images/top/next_icon_gray.png");
             float: right;
@@ -57,15 +57,35 @@ html {
 }
 
 p {
-    @include fontsize(16);
+    margin: 0;
+    padding: 0;
+    @media (max-width: 550px) {
+        @include fontsize(12);
+    }
+    @media (min-width: 551px) {
+        @include fontsize(12);
+    }
 }
 
 a {
     text-decoration: none;
+    color: black;
 }
 
 body {
     background-color: $basecolor;
+}
+
+.pc_logo, .pc_navi{
+    @media (max-width: 550px) {
+        display: none;
+    }
+}
+
+.sp_logo, .sp_navi {
+    @media (min-width: 551px) {
+        display: none;
+    }
 }
 
 /* HEADER 
@@ -75,28 +95,81 @@ header {
         padding-top: 20px;
         padding-bottom: 4px;
         margin-bottom: 10px;
-    }
-    img {
-        margin: 0;
-        padding-top: 4px;
-    }
-    .pc_navi {
-        margin-top: 10px;
-        ul {
+
+        @media (max-width: 550px) {
             margin-bottom: 0;
-            text-align: right;
-            li {
-                margin-right: 10px;
-                display: inline-block;
-                list-style-type: none;
-                &:last-child {
-                    margin-right: 0;
+
+            .sp_logo {
+                display: block;
+                margin: auto;
+                padding-top: 4px;
+            }
+            .sp_navi {
+                margin: 10px 0 0 0;
+                text-align: center;
+
+                .fixed_navi {
+                    text-align: center;
+                    margin-bottom: 0px;
+                    li {
+                        display: inline-block;
+                        margin-bottom: 0;
+                        list-style-type: none;
+                        &:last-child {
+                            margin-right: 0;
+                        }                       
+                    }
+                }
+                .hidden_navi {
+                    display: none;
+                    position: absolute;
+                    top: 90px;
+                    right: 10px;
+                    margin: 0;
+                    padding: 0;
+                    z-index: 100;
+                    background-color: $basecolor;
+                    color: $gray1;
+                    li {
+                        display: block;
+                        margin: 0;
+                        padding: 10px;
+                        list-style-type: none;
+                        text-align: left;
+                        border: 1px solid $gray1;
+                        &:last-child {
+                            margin-right: 0;
+                        }
+                    }
                 }
             }
         }
+        // @media (max-width: 550px)
+
+        @media (min-width: 551px) {
+            #pc_logo {
+                margin: 0;
+                padding-top: 4px;
+            }
+            .pc_navi {
+                margin-top: 10px;
+                ul {
+                    margin-bottom: 0;
+                    text-align: right;
+                    li {
+                        margin-right: 10px;
+                        display: inline-block;
+                        list-style-type: none;
+                        &:last-child {
+                            margin-right: 0;
+                        }
+                    }
+                }
+            }
+        }
+        // /@media (min-width: 551px)
     }
 }
-// header
 
 /* PAGE CONTENTS 
 ---------------------------------------------*/
@@ -106,12 +179,22 @@ header {
     #cover_area {
         margin-top: 10px;
         margin-bottom: 10px;
+        @media (max-width: 550px) {
+            margin-bottom: 0;
+        }
+        
         .owl-dots {
             text-align: left;
+            margin-top: 0;
+
             .owl-dot {
                 span {
                     height: 2px;
                     width: 30px;
+                    margin-left: 0;
+                    @media (max-width: 550px) {
+                        width: 20px;
+                    }
                 }
                 &.active span {
                     background-color:$red;
@@ -121,17 +204,28 @@ header {
     }
     
     #new_items{
-        padding-top: 20px;
+        padding-top: 10px;
         padding-bottom: 10px;
+        text-align: center;
+        @media (max-width: 550px) {
+            margin-bottom: 0;
+        }
+        .pc_logo {
+            margin-bottom: 10px;
+        }
     }
 
     #popular_items {
         padding-top: 20px;
         padding-bottom: 10px;
+        text-align: center;
+        @media (max-width: 550px) {
+            margin-bottom: 0;
+        }
     }
 
     .items_list {
-        margin-top: 20px;
+        margin-top: 10px;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
@@ -139,40 +233,65 @@ header {
         .item_box {
             box-sizing: border-box;
             background-color: $bgwhite;
-            width: calcWidth(2,3);
-            padding: 10px;
+            padding: 10px 10px 6px 10px;
             margin-top: 2px;
             text-align: center;
+
             .description,.cost {
                 text-align: left;
+                padding-top: 4px;
+            }
+            @media (max-width: 550px) {
+                width: calcWidth(2,2);
+                .description {
+                    @include fontsize(10);
+                }
+            }
+            @media (min-width: 551px) {
+                width: calcWidth(2,3);
             }
         }
     }
-    
+
     #shopping_guide {
         padding-top: 20px;
         padding-bottom: 10px;
+        text-align: center;
+        
+        .pc_logo {
+            margin-bottom: 10px;
+        }
         
         .guide_container {
-            margin-top: 20px;
-            display: flex;
-            justify-content: space-between;
-
+            margin-top: 10px;
+            display: block;
+            text-align: left;
+            @media (min-width: 551px) {
+                display: flex;
+                justify-content: space-between;
+            }
+            
             .guide_box {
                 background-color: $bgwhite;
-                width: calcWidth(2,2);
                 padding: 10px;
                 box-sizing: border-box;
-                
+                margin-bottom: 10px;
+                width: 100%;
+                @media (min-width: 551px) {                
+                    width: calcWidth(2,2);
+                }
+
                 .title {
-                    @include fontsize(18);
+                    @include fontsize(16);
                     font-weight: bold;
                     color: $gray1;
                     margin-top: 10px;
                     margin-bottom: 10px;
+                    @media (min-width: 551px) {
+                        @include fontsize(18);
+                    }
                 }
                 .sub_title {
-                    @include fontsize(16);
                     font-weight: bold;
                     color: $gray1;
                     margin-top: 4px;
@@ -181,34 +300,37 @@ header {
             }
         }
     }
-    
+
 /* SIDEBER CONTENTS */
     #sidebar {
         #item_search {
             background-color: $bgwhite;
             width: 100%;
-            padding-top: 10px;
+            padding: 10px 0 0 0;
             
             img {
-                margin-left: 10px;
+                margin-left: 20px;
             }
             #searchFrm {
                 display: block;
                 position: relative;
-                padding: 0 10px;
+                margin: 10px 20px 0 20px;
             }
             #keywords {
                 position: relative;
                 background-color: $gray2;
                 border: none;
                 width: 100%;
+                border-radius: 0;
                 &::-webkit-input-placeholder {
-                    color: lighten($gray3, 10%);
+                    color: $gray3;
                     font-style: italic;
+                    @include fontsize(11);
                 }
                 &::-webkit-input-placeholder {
-                    color: lighten($gray3, 10%);
-                    font-style: italic;                    
+                    color: $gray3;
+                    font-style: italic;
+                    @include fontsize(11);
                 }
             }
             #searchBtn {
@@ -217,7 +339,7 @@ header {
                 right: 20px;
             }
         }
-
+        
         #side_navi {
             .side_link_box {
                 margin-top: 10px;
@@ -259,40 +381,67 @@ header {
                 }
                 .shop_info_contens {
                     padding: 10px;
+                    margin-bottom: 10px;
                     text-align: center;
-                    p {
-                        margin-bottom: 10px;
-                        text-align: left;
-                        @include fontsize(14);
+
+                    .info_description{
+                        p {
+                            text-align: left;
+                        }
+                        img {
+                            margin-top: 10px;
+                        }
+                    }
+
+                    @media (max-width: 550px) {
+                        display: flex;
+                        .info_foto {
+                            width: 150%;
+                        }
+                        .info_description {
+                            padding-left: 10px;
+                            p {
+                                text-align: left;
+                            }
+                        }
                     }
                 }
             }
         }
     }
 }
+
 /* FOOTER
 ---------------------------------------------*/
 #footer_in {
     margin-top: 20px;
-    
+    @media (max-width: 550px) {
+        margin-top: 10px;
+    }
+
     .pagetop {
         border-bottom: 1px solid $gray1;
         text-align: right;
+        @media (max-width: 550px) {
+            text-align: center;
+            padding-bottom: 10px;
+        }
     }
     .footer_link {
         text-align: center;
         margin-top: 20px;
-        margin-bottom: 10px;
+
         ul{
-            padding-left: 10px;
-            margin-bottom: 10px;
+            margin: 0;
             li {
                 display: inline-block;
                 margin-right: 10px;
             }
-            a {
-                color: black;
-                margin-right: 5px;
+            @media (max-width: 550px) {
+                li {
+                    margin: 0px;
+                    @include fontsize(10);
+                }
             }
         }
     }
@@ -301,5 +450,4 @@ header {
         color: $gray3;
         @include fontsize(10);
     }
-
 }
