@@ -1,4 +1,6 @@
 $(document).ready(function(){
+
+    // 
     $('#cover_area').owlCarousel(
         {
             loop: true,
@@ -20,6 +22,11 @@ $(document).ready(function(){
 
     $('#menu_icon').click(function(){
         $('.hidden_navi').slideToggle();
-    });    
+    });
+
+    $(".visible").click(function(){
+        var img_src = $(this).attr("src");
+        $(".display_img img").attr("src", img_src);
+    });
 
 });
