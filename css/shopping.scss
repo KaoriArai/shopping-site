@@ -514,6 +514,7 @@ header {
             p {
                 width: 100%;
                 color: black;
+                @include fontsize(16);
             }
             table{
                 margin-top: 20px;

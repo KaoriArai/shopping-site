@@ -356,7 +356,9 @@ header #header_in {
       border-bottom: 1px solid #d7d4cd; }
     #page_contents #products_contents #product_description p {
       width: 100%;
-      color: black; }
+      color: black;
+      font-size: 16px;
+      font-size: 1.6rem; }
     #page_contents #products_contents #product_description table {
       margin-top: 20px;
       margin-bottom: 10px;
