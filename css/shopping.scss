@@ -462,11 +462,15 @@ header {
                 .price_data {
                     .praice_num {
                         color: #e92e72;
-                        @include fontsize(14);
+                        @include fontsize(20);
                         font-style: italic;
                         &::before {
                             content: '￥';
-                            @include fontsize(10);
+                            @include fontsize(12);
+                            font-style: italic;
+                        }
+                        &::after {
+                            content: ' ';
                         }
                     }
                 }
